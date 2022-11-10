@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "f458cdb1-daca-4b1c-926a-89d08c6d7eb8",
+		"name": "Tweetapp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Auth",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"KeerthanaG\",\r\n    \"password\":\"abc123\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8087/api/v1.0/tweets/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"api",
+						"v1.0",
+						"tweets",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1MSIsImV4cCI6MTY1OTMyNzEyMSwiaWF0IjoxNjU5MzI1MzIxfQ.kRVDtbFFM-A99OLFFeOZnLiRnB5gmt9VSflLZDzY_W4",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"keerthana\",\r\n    \"lastName\":\"G\",\r\n    \"emailId\":\"keerthana@gmail.com\",\r\n    \"loginId\":\"12345\",\r\n    \"username\":\"user1\",\r\n    \"password\":\"abc123\",\r\n    \"confirmPassword\":\"abc123\",\r\n    \"contactNumber\":\"9876543210\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8087/api/v1.0/tweets/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"api",
+						"v1.0",
+						"tweets",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1MiIsImV4cCI6MTY1OTE4NjQ2MCwiaWF0IjoxNjU5MTg0NjYwfQ.7lWEBQZ4FenjVdHkCEf9Js-4nDHuMNteDpZPNeZhonk",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"usertest1\",\r\n    \"newPassword\":\"abc1234\",\r\n    \"confirmPassword\":\"abc1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8087/api/v1.0/tweets/usertest1/forgot",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"api",
+						"v1.0",
+						"tweets",
+						"usertest1",
+						"forgot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Tweet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImV4cCI6MTY1OTUyNTY1OSwiaWF0IjoxNjU5NTIzODU5fQ.osmEq1w7kHi0EBG0Qa-mJ8S1Gvzt5hP-GUWSDFOtYDs",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tweetId\":102,\r\n    \"tweet\":\"Tweet message\",\r\n    \"tweetTag\":\"#tag #two\",\r\n    \"tweetReply\":[\"Tweet Reply 1\"],\r\n    \"username\":\"user2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8087/api/v1.0/tweets/user2/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"api",
+						"v1.0",
+						"tweets",
+						"user2",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all tweet",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTY1ODkxMDQ5MCwiaWF0IjoxNjU4OTA4NjkwfQ.eqjaeMatX-37KqhRKuuqn2-kUxocj-jPIDk8I4rgPRE",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8087/api/v1.0/tweets/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"api",
+						"v1.0",
+						"tweets",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLZWVydGhhbmFHIiwiZXhwIjoxNjU5MDg3Njk4LCJpYXQiOjE2NTkwODU4OTh9.j290riKkF67uRs-vb1dk6GHHikBJd8HlEpxSi6prHXY",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8087/api/v1.0/tweets/users/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"api",
+						"v1.0",
+						"tweets",
+						"users",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user by username",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLZWVydGhhbmFHIiwiZXhwIjoxNjU5MDkwODMzLCJpYXQiOjE2NTkwODkwMzN9.JM8dxBc0frun8NKV86LQb4wOVToBxQL_LbSTXdYNxjM",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8087/api/v1.0/tweets/Username3",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"api",
+						"v1.0",
+						"tweets",
+						"Username3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update tweet",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1MSIsImV4cCI6MTY1OTI3NDU4OSwiaWF0IjoxNjU5MjcyNzg5fQ.bcJziv7ABYaG955WxuJXzOtLYwpTeiNHUjfzD0gkoZ0",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"u2\",\r\n    \"tweetId\":102,\r\n    \"tweet\":\"I am updating tweet 102 2nd time\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8087/api/v1.0/tweets/u2/update/102",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"api",
+						"v1.0",
+						"tweets",
+						"u2",
+						"update",
+						"102"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete tweet",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImV4cCI6MTY1OTM1NzM3OSwiaWF0IjoxNjU5MzU1NTc5fQ.OgBHd0qPL4Qu92FmooIzQDeQjIra4F5arGjoQ8DuM7c",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8087/api/v1.0/tweets/user1/delete/101",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"api",
+						"v1.0",
+						"tweets",
+						"user1",
+						"delete",
+						"101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "like tweet",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1MiIsImV4cCI6MTY1OTE4MDIxOSwiaWF0IjoxNjU5MTc4NDE5fQ.4h8e3JPs4ZvHl8mEhxs7ZivIxSgYMftFXi-KyWs8WLE",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8087/api/v1.0/tweets/u2/like/101",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"api",
+						"v1.0",
+						"tweets",
+						"u2",
+						"like",
+						"101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get tweet by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1MiIsImV4cCI6MTY1OTE4NjQ2MCwiaWF0IjoxNjU5MTg0NjYwfQ.7lWEBQZ4FenjVdHkCEf9Js-4nDHuMNteDpZPNeZhonk",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8087/api/v1.0/tweets/tweet/?tweetId=101",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"api",
+						"v1.0",
+						"tweets",
+						"tweet",
+						""
+					],
+					"query": [
+						{
+							"key": "tweetId",
+							"value": "101"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
